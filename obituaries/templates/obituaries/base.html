@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Obituary Platform{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Obituary Platform</h1>
+            <nav>
+                <a href="{% url 'view_obituaries' %}" class="nav-button">View Obituaries</a>
+                <a href="{% url 'submit_obituary' %}" class="nav-button">Submit Obituary</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Obituary Platform</p>
+        </div>
+    </footer>
+</body>
+</body>
+</html>

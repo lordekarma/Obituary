@@ -1,0 +1,29 @@
+{% extends 'obituaries/base.html' %}
+
+{% block title %}View Obituaries{% endblock %}
+
+{% block content %}
+<h2>Obituaries</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date of Birth</th>
+            <th>Date of Death</th>
+            <th>Content</th>
+            <th>Author</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for obituary in obituaries %}
+        <tr>
+            <td>{{ obituary.name }}</td>
+            <td>{{ obituary.date_of_birth|date:"F j, Y" }}</td>
+            <td>{{ obituary.date_of_death|date:"F j, Y" }}</td>
+            <td>{{ obituary.content|truncatewords:20 }}</td>
+            <td>{{ obituary.author }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
